@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/RX_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RX_control
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity rising_edge_detect
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Boud_rate_gen
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity STD_FIFO
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/voja/psdsProject/project_1/project_1.srcs/sim_1/new/rx_fifo_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity rx_fifo_tb

@@ -1,0 +1,7 @@
+Running: xsim.dir/rx_fifo_tb_behav/xsimk.exe -simmode gui -wdb rx_fifo_tb_behav.wdb -simrunnum 0 -socket 61675
+Design successfully loaded
+Design Loading Memory Usage: 21548 KB (Peak: 21548 KB)
+Design Loading CPU Usage: 186 ms
+Simulation completed
+Simulation Memory Usage: 29584 KB (Peak: 29584 KB)
+Simulation CPU Usage: 1123 ms
