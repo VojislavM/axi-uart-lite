@@ -54,8 +54,7 @@ component TX_control is
            TxD_data : in STD_LOGIC_VECTOR (7 downto 0);
            transmitted : out STD_LOGIC;
            TxD : out STD_LOGIC;
-           count1 : out STD_LOGIC_VECTOR(3 downto 0);
-           count2 : out STD_LOGIC_VECTOR(2 downto 0));
+           read_fifo : out STD_LOGIC);
 end component;
 
 signal clk : STD_LOGIC := '0';
@@ -66,8 +65,8 @@ signal TxD : STD_LOGIC;
 signal TxD_data : STD_LOGIC_VECTOR (7 downto 0);
 signal load : STD_LOGIC;
 signal transmitted : STD_LOGIC;
-signal count1 : STD_LOGIC_VECTOR(3 downto 0);
-signal count2 : STD_LOGIC_VECTOR(2 downto 0);
+signal received : STD_LOGIC;
+signal read_fifo : STD_LOGIC;
 
 begin
 
@@ -78,16 +77,14 @@ port map (clk => clk, rst => rst, bclk => bclk);
 
 uut: TX_control
 port map (clk => clk, 
-          TxD => TxD, 
           rst => rst,
-          baud_tick => bclk,
-        --  received => '0',
-          transmitted => transmitted,
           load => load,
-          TxD_data => TxD_data
-        --  count1 => (others '0'),
-        --  count2 => (others '0')
-        );
+          baud_tick => bclk,
+          TxD_data => TxD_data,
+          transmitted => transmitted,
+          TxD => TxD, 
+          read_fifo => read_fifo);
+        
 
 clk_process : process
 begin

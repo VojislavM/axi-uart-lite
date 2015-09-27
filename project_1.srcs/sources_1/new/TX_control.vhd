@@ -41,19 +41,19 @@ entity TX_control is
            TxD_data : in STD_LOGIC_VECTOR (7 downto 0);
            transmitted : out STD_LOGIC;
            TxD : out STD_LOGIC;
-           count1 : out STD_LOGIC_VECTOR(3 downto 0);
-           count2 : out STD_LOGIC_VECTOR(2 downto 0));
+           read_fifo : out STD_LOGIC);
 end TX_control;
 
 architecture Behavioral of TX_control is
 
-type state is (idle, startbit, databits, paritybit, stopbit);
+type state is (idle, load_state, load_state1, startbit, databits, paritybit, stopbit);
 signal state_reg, next_state_reg: state;
 signal counter, next_count : STD_LOGIC_VECTOR(3 downto 0);
 signal data_count, data_next_count : STD_LOGIC_VECTOR(2 downto 0);
 signal tsr, tsr_next : STD_LOGIC_VECTOR(7 downto 0) := "00000000";
 signal tx, tx_next : STD_LOGIC;
 signal parity : STD_LOGIC;
+signal read_fifo_s, next_read_fifo_s : STD_LOGIC;
 
 begin
 
@@ -65,12 +65,14 @@ begin
 		data_count <= (others => '0');
 		tsr <= (others => '0');
 		tx <= '1';
+		read_fifo_s <= '0';
 	elsif (rising_edge(clk) and (rst = '0')) then
         state_reg <= next_state_reg;
         counter <= next_count;
         data_count <= data_next_count;
         tsr <= tsr_next;
         tx <= tx_next;
+        read_fifo_s <= next_read_fifo_s;
     end if;
 end process;
 
@@ -82,12 +84,18 @@ begin
         data_next_count <= data_count;
         tsr_next <= tsr;
         transmitted <= '0';
+        next_read_fifo_s <= '0';
         tx_next <= '1';
         if (load = '1') then
-            next_state_reg <= startbit;
+            next_state_reg <= load_state;
             next_count <= (others => '0');
-            tsr_next <= TxD_data;
+            next_read_fifo_s <= '1';
         end if;
+    elsif (state_reg = load_state) then
+         next_state_reg <= load_state1;
+    elsif (state_reg = load_state1) then
+        next_state_reg <= startbit;
+        tsr_next <= TxD_data;
     elsif (rising_edge(baud_tick)) then
         next_state_reg <= state_reg;
         next_count <= counter;
@@ -95,9 +103,11 @@ begin
         tsr_next <= tsr;
         tx_next <= tx;
         transmitted <= '0';
+        next_read_fifo_s <= read_fifo_s;
         case state_reg is
 			when startbit =>
 				tx_next <= '0';
+				next_read_fifo_s <= '0';
 				if (counter = 15) then
 					next_state_reg <= databits;
 					next_count <= (others => '0');
@@ -142,9 +152,8 @@ begin
     end if;
 end process;
 
-count1 <= counter;
-count2 <= data_count;
 parity <= TxD_data(7) xor TxD_data(6) xor TxD_data(5) xor TxD_data(4) xor TxD_data(3) xor TxD_data(2) xor TxD_data(1) xor TxD_data(0);   
 TxD <= tx;
+read_fifo <= read_fifo_s;
 
 end Behavioral;
