@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -90,31 +91,34 @@ end process;
 
 transmitt_process: process
 begin
+
     ctrl_reg_s(0) <= '1';  --rst_tx_fifo
     wait for clk_period * 10;
     ctrl_reg_s(0) <= '0';
-    ctrl_reg_s(3) <= '1';  --write_en_tx
-    tx_fifo_s <= "00000001";
-    wait for clk_period;
-	ctrl_reg_s(3) <= '0';
-    wait for clk_period;
-	ctrl_reg_s(3) <= '1';  --write_en_tx
-	tx_fifo_s <= "00000101";
-    wait for clk_period;
-    ctrl_reg_s(3) <= '0';
+
+    -- sending 17 bytes to transmitt buffer
+    for test_vec in 0 to 17 loop
+        wait for clk_period;
+        ctrl_reg_s(3) <= '1';  --write_en_tx
+        tx_fifo_s <= STD_LOGIC_VECTOR (to_unsigned(test_vec, 8));
+        wait for clk_period;
+        ctrl_reg_s(3) <= '0';  --write_en_tx
+    end loop; 
+    
     wait;
 end process;
 
 receive_process: process
 begin
-    wait for 200 us;
-    ctrl_reg_s(2) <= '1';
-    wait for clk_period;
-    ctrl_reg_s(2) <= '0';
-    wait for clk_period;
-    ctrl_reg_s(2) <= '1';
-    wait for clk_period;
-    ctrl_reg_s(2) <= '0';
+    wait for 2000 us;
+    --reading 17 bytes received to rx_buffer 
+    for test_vec in 0 to 17 loop
+        wait for clk_period;
+        ctrl_reg_s(2) <= '1'; --read_en_tx
+        wait for clk_period;
+        ctrl_reg_s(2) <= '0';
+    end loop;
+    
     wait;
 end process;
 

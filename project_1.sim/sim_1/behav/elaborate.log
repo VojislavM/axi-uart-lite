@@ -9,9 +9,9 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling package ieee.numeric_std
 Compiling architecture behavioral of entity xil_defaultlib.RX_control [rx_control_default]
 Compiling architecture behavioral of entity xil_defaultlib.TX_control [tx_control_default]
 Compiling architecture behavioral of entity xil_defaultlib.Boud_rate_gen [\Boud_rate_gen(115200,50)\]
