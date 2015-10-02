@@ -41,7 +41,8 @@ entity top_level is
           ctrl_reg : in STD_LOGIC_VECTOR (7 downto 0);
           stat_reg : out STD_LOGIC_VECTOR (7 downto 0);
           rx_fifo : out STD_LOGIC_VECTOR (7 downto 0);
-          tx_fifo : in STD_LOGIC_VECTOR (7 downto 0));
+          tx_fifo : in STD_LOGIC_VECTOR (7 downto 0);
+          interrupt : out STD_LOGIC);
 end top_level;
 
 architecture Behavioral of top_level is
@@ -104,11 +105,21 @@ component RX_control is
            parity_error : out STD_LOGIC);
 end component;
 
+component Int_control is
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           rx_int : in STD_LOGIC;
+           tx_int : in STD_LOGIC;
+           enable : in STD_LOGIC;
+           interrupt : out STD_LOGIC);
+end component;
+
 signal baud_tick : STD_LOGIC;
 signal received : STD_LOGIC;
-signal RxD_data : STD_LOGIC_VECTOR (7 downto 0);
+signal RxD_data_s : STD_LOGIC_VECTOR (7 downto 0);
 signal parity_error : STD_LOGIC;
 signal load : STD_LOGIC;
+signal not_load : STD_LOGIC;
 signal TxD_data : STD_LOGIC_VECTOR (7 downto 0);
 signal transmitted : STD_LOGIC;
 signal tx_out : STD_LOGIC;
@@ -132,11 +143,15 @@ signal stat_reg_out : STD_LOGIC_VECTOR (7 downto 0);
 signal rst_tx_fifo : STD_LOGIC;
 signal rst_rx_fifo : STD_LOGIC;
 signal enable_int : STD_LOGIC;
-signal sig1 : STD_LOGIC;
+--signal sig1 : STD_LOGIC;
 signal sig2 : STD_LOGIC;
 signal sig3 : STD_LOGIC;
 signal sig4 : STD_LOGIC;
 signal sig5 : STD_LOGIC;
+
+signal data_in_5 : STD_LOGIC;
+
+signal interrupt_s : STD_LOGIC;
 
 begin
 rx_control_mod: RX_control
@@ -145,13 +160,13 @@ port map(clk => clk,
          rst => rst,
          baud_tick => baud_tick,
          received => received,
-         RxD_data => RxD_data,
+         RxD_data => RxD_data_s,
          parity_error => parity_error);
          
 tx_control_mod: TX_control
 port map(clk => clk,
          rst => rst,
-         load => (not Empty_tx),
+         load => not_load,
          baud_tick => baud_tick, 
          TxD_data => TxD_data,
          transmitted => transmitted,
@@ -166,9 +181,11 @@ port map(clk => clk,
          bclk => baud_tick);
          
 rx_fifo_buf: STD_FIFO
+generic map (DATA_WIDTH => 8,
+			 FIFO_DEPTH => 16)
 port map (CLK => clk,
           RST => rst_rx_fifo,
-          DataIn => RxD_data,
+          DataIn => RxD_data_s,
           WriteEn => WriteEn_rx,
           ReadEn => ReadEn_rx,
           DataOut => DataOut_rx,
@@ -181,6 +198,8 @@ port map (clk => clk,
           output => WriteEn_rx);
           
 tx_fifo_buf: STD_FIFO
+generic map (DATA_WIDTH => 8,
+			 FIFO_DEPTH => 16)
 port map (CLK => clk,
           RST => rst_tx_fifo,
           DataIn => tx_fifo,
@@ -202,8 +221,8 @@ port map(clk => clk,
          data_in(1) => Full_rx,
          data_in(2) => Empty_tx,
          data_in(3) => Full_tx,
-         data_in(4) => int_enabled, --jos uvek nema
-         data_in(5) => (Full_rx and received),
+         data_in(4) => int_enabled, 
+         data_in(5) => data_in_5 ,
          data_in(6) => frame_error, --ne znam kako.
          data_in(7) => parity_error,
          data_out => stat_reg_out);  
@@ -213,15 +232,26 @@ port map(clk => clk,
          rst => rst,
          data_out(0) => rst_tx_fifo,
          data_out(1) => rst_rx_fifo,
-         data_out(2) => sig1,
-         data_out(3) => sig2,
-         data_out(4) => enable_int, --jos uvek nema
+         data_out(2) => ReadEn_rx,  --dodato da se moze procitati rx fifo
+         data_out(3) => WriteEn_tx,
+         data_out(4) => int_enabled, --jos uvek nema
          data_out(5) => sig3,
          data_out(6) => sig4, --ne znam kako.
          data_out(7) => sig5,
          data_in=> ctrl_reg);  
+         
+interrupt_comp: Int_control
+port map ( clk => clk,
+           rst => rst,
+           rx_int => Empty_rx,
+           tx_int => Empty_tx,
+           enable => int_enabled,
+           interrupt => interrupt_s);
 
+not_load <= (not Empty_tx);
+data_in_5 <= (Full_rx and WriteEn_rx);
 TX <= tx_out;
 rx_fifo <= DataOut_rx;        
-stat_reg <= stat_reg_out;  
+stat_reg <= stat_reg_out; 
+interrupt <= interrupt_s; 
 end Behavioral;

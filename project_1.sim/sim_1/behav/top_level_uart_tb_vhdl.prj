@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/TX_control.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/STD_FIFO.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/simp_reg.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/RX_control.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/rising_edge_detect.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/Boud_rate_gen.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/Int_control.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sources_1/new/top_level.vhd"
+vhdl xil_defaultlib  "../../../project_1.srcs/sim_1/new/top_level_uart_tb.vhd"
+
+# Do not sort compile order
+nosort

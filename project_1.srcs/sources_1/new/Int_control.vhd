@@ -32,13 +32,37 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Int_control is
-    Port ( int : out STD_LOGIC;
-           int_ctrl : in STD_LOGIC);
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           rx_int : in STD_LOGIC;
+           tx_int : in STD_LOGIC;
+           enable : in STD_LOGIC;
+           interrupt : out STD_LOGIC);
 end Int_control;
 
 architecture Behavioral of Int_control is
 
+signal interrupt_s, next_interrupt_s : STD_LOGIC;
+
 begin
 
+process (clk, rst)
+begin
+    if (rst = '1') then
+       interrupt_s <= '0'; 
+    elsif (rising_edge(clk)) then
+        if (enable = '1') then
+            interrupt_s <= next_interrupt_s;
+        else
+            interrupt_s <= '0';
+        end if;
+    end if;
+end process;
 
+process (rx_int, tx_int)
+begin
+    next_interrupt_s <= (not rx_int) and tx_int;
+end process;
+
+interrupt <= interrupt_s;
 end Behavioral;

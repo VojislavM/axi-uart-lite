@@ -1,6 +1,6 @@
 Vivado Simulator 2015.2
 Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto c597108db6c64997bb03d20fb49ac29b --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tx_fifo_tb_behav xil_defaultlib.tx_fifo_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2015.2/bin/unwrapped/win64.o/xelab.exe -wto c597108db6c64997bb03d20fb49ac29b --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_level_uart_tb_behav xil_defaultlib.top_level_uart_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -9,13 +9,17 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.Boud_rate_gen [\Boud_rate_gen(115200,50)\]
-Compiling architecture behavioral of entity xil_defaultlib.rising_edge_detect [rising_edge_detect_default]
-Compiling architecture behavioral of entity xil_defaultlib.STD_FIFO [\STD_FIFO(8,16)\]
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.RX_control [rx_control_default]
 Compiling architecture behavioral of entity xil_defaultlib.TX_control [tx_control_default]
-Compiling architecture behavioral of entity xil_defaultlib.tx_fifo_tb
+Compiling architecture behavioral of entity xil_defaultlib.Boud_rate_gen [\Boud_rate_gen(115200,50)\]
+Compiling architecture behavioral of entity xil_defaultlib.STD_FIFO [\STD_FIFO(8,16)\]
+Compiling architecture behavioral of entity xil_defaultlib.rising_edge_detect [rising_edge_detect_default]
+Compiling architecture behavioral of entity xil_defaultlib.simp_reg [simp_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Int_control [int_control_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_level [top_level_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_level_uart_tb
 Waiting for 2 sub-compilation(s) to finish...
-Built simulation snapshot tx_fifo_tb_behav
+Built simulation snapshot top_level_uart_tb_behav

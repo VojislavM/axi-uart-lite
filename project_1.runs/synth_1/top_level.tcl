@@ -16,12 +16,13 @@ set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
 set_property ip_repo_paths c:/Users/voja/psdsProject/ip_repo/simpleMultiplier_1.0 [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/simp_reg.vhd
+  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/TX_control.vhd
   C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd
+  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/simp_reg.vhd
+  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/RX_control.vhd
   C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd
   C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd
-  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/TX_control.vhd
-  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/RX_control.vhd
+  C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Int_control.vhd
   C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd
 }
 synth_design -top top_level -part xc7z020clg484-1
