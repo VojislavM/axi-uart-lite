@@ -1,14 +1,12 @@
-
-*** Running vivado
-    with args -log AXI_UART_Lite_v1_0.vds -m64 -mode batch -messageDb vivado.pb -notrace -source AXI_UART_Lite_v1_0.tcl
-
-WARNING: Default location for XILINX_VIVADO_HLS not found: 
-
-****** Vivado v2015.2 (64-bit)
-  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
-  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Oct 05 12:27:42 2015
+# Process ID: 6028
+# Log file: C:/Users/voja/psdsProject/project_1/project_1.runs/synth_1/AXI_UART_Lite_v1_0.vds
+# Journal file: C:/Users/voja/psdsProject/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
 source AXI_UART_Lite_v1_0.tcl -notrace
 Command: synth_design -top AXI_UART_Lite_v1_0 -part xc7z020clg484-1
 Starting synth_design
