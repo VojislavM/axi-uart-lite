@@ -143,7 +143,7 @@ AXI_UART_Lite_v1_0_S00_AXI_inst : AXI_UART_Lite_v1_0_S00_AXI
 	);
 
 	-- Add user logic here
-uut: top_level
+uart: top_level
 port map (clk => s00_axi_aclk,
           rst => s00_axi_aresetn,
           TX => TX,
