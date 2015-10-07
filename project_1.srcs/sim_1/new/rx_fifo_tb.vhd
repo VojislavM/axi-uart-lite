@@ -123,8 +123,6 @@ port map (clk => clk,
           baud_tick => bclk,
 		  received => received,
           RxD_data => RxD_data
-        --  count1 => (others '0'),
-        --  count2 => (others '0')
         );
         
 clk_process : process

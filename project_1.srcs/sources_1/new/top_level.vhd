@@ -254,4 +254,5 @@ TX <= tx_out;
 rx_fifo <= DataOut_rx;        
 stat_reg <= stat_reg_out; 
 interrupt <= interrupt_s; 
+
 end Behavioral;

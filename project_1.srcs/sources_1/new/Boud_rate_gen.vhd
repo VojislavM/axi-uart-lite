@@ -39,8 +39,6 @@ entity Boud_rate_gen is
 
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           --sel : in STD_LOGIC_VECTOR(1 downto 0);
-           --counter : out STD_LOGIC_VECTOR(7 downto 0) := "00000000"; 
            bclk : out STD_LOGIC); --baud clock out
 end Boud_rate_gen;
 

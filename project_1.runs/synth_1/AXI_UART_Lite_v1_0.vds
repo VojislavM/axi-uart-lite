@@ -2,8 +2,8 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Mon Oct 05 12:27:42 2015
-# Process ID: 6028
+# Start of session at: Wed Oct 07 15:49:55 2015
+# Process ID: 9156
 # Log file: C:/Users/voja/psdsProject/project_1/project_1.runs/synth_1/AXI_UART_Lite_v1_0.vds
 # Journal file: C:/Users/voja/psdsProject/project_1/project_1.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
@@ -13,7 +13,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 267.156 ; gain = 49.309
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 267.070 ; gain = 50.020
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'AXI_UART_Lite_v1_0' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0.vhd:51]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -26,7 +26,7 @@ INFO: [Synth 8-638] synthesizing module 'AXI_UART_Lite_v1_0_S00_AXI' [C:/Users/v
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0_S00_AXI.vhd:336]
 INFO: [Synth 8-256] done synthesizing module 'AXI_UART_Lite_v1_0_S00_AXI' (1#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0_S00_AXI.vhd:90]
-INFO: [Synth 8-3491] module 'top_level' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:36' bound to instance 'uut' of component 'top_level' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0.vhd:146]
+INFO: [Synth 8-3491] module 'top_level' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:36' bound to instance 'uart' of component 'top_level' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0.vhd:146]
 INFO: [Synth 8-638] synthesizing module 'top_level' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:48]
 INFO: [Synth 8-3491] module 'RX_control' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/RX_control.vhd:36' bound to instance 'rx_control_mod' of component 'RX_control' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:157]
 INFO: [Synth 8-638] synthesizing module 'RX_control' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/RX_control.vhd:46]
@@ -42,23 +42,23 @@ INFO: [Synth 8-256] done synthesizing module 'TX_control' (3#1) [C:/Users/voja/p
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter AXI_CLK bound to: 50 - type: integer 
 INFO: [Synth 8-3491] module 'Boud_rate_gen' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd:36' bound to instance 'baud_generator' of component 'Boud_rate_gen' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'Boud_rate_gen' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'Boud_rate_gen' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd:45]
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter AXI_CLK bound to: 50 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Boud_rate_gen' (4#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'Boud_rate_gen' (4#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/Boud_rate_gen.vhd:45]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter FIFO_DEPTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'STD_FIFO' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:5' bound to instance 'rx_fifo_buf' of component 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:183]
-INFO: [Synth 8-638] synthesizing module 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:22]
+INFO: [Synth 8-3491] module 'STD_FIFO' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:35' bound to instance 'rx_fifo_buf' of component 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:50]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter FIFO_DEPTH bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'STD_FIFO' (5#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'STD_FIFO' (5#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:50]
 INFO: [Synth 8-3491] module 'rising_edge_detect' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd:34' bound to instance 'edge_detect_rx' of component 'rising_edge_detect' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:195]
 INFO: [Synth 8-638] synthesizing module 'rising_edge_detect' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'rising_edge_detect' (6#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd:40]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter FIFO_DEPTH bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'STD_FIFO' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:5' bound to instance 'tx_fifo_buf' of component 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:200]
+INFO: [Synth 8-3491] module 'STD_FIFO' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/STD_FIFO.vhd:35' bound to instance 'tx_fifo_buf' of component 'STD_FIFO' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:200]
 INFO: [Synth 8-3491] module 'rising_edge_detect' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/rising_edge_detect.vhd:34' bound to instance 'edge_detect_tx' of component 'rising_edge_detect' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:212]
 INFO: [Synth 8-3491] module 'simp_reg' declared at 'C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/simp_reg.vhd:34' bound to instance 'stat_reg_comp' of component 'simp_reg' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:217]
 INFO: [Synth 8-638] synthesizing module 'simp_reg' [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/simp_reg.vhd:41]
@@ -71,23 +71,23 @@ WARNING: [Synth 8-3848] Net frame_error in module/entity top_level does not have
 INFO: [Synth 8-256] done synthesizing module 'top_level' (9#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/top_level.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'AXI_UART_Lite_v1_0' (10#1) [C:/Users/voja/psdsProject/project_1/project_1.srcs/sources_1/new/AXI_UART_Lite_v1_0.vhd:51]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 301.359 ; gain = 83.512
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 301.277 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 301.359 ; gain = 83.512
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 301.277 ; gain = 84.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 301.359 ; gain = 83.512
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 301.277 ; gain = 84.227
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-5544] ROM "next_state_reg2" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state_reg2" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 349.832 ; gain = 131.984
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 319.289 ; gain = 102.238
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -239,7 +239,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 457.820 ; gain = 239.973
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 457.676 ; gain = 240.625
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -250,9 +250,9 @@ WARNING: [Synth 8-3331] design AXI_UART_Lite_v1_0 has unconnected port s00_axi_a
 WARNING: [Synth 8-3331] design AXI_UART_Lite_v1_0 has unconnected port s00_axi_arprot[1]
 WARNING: [Synth 8-3331] design AXI_UART_Lite_v1_0 has unconnected port s00_axi_arprot[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 459.098 ; gain = 241.250
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 458.953 ; gain = 241.902
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 459.098 ; gain = 241.250
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 458.953 ; gain = 241.902
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -264,19 +264,19 @@ Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: 
-+-------------------+----------------------------+-----------+----------------------+--------------+---------------------------+
-|Module Name        | RTL Object                 | Inference | Size (Depth x Width) | Primitives   | Hierarchical Name         | 
-+-------------------+----------------------------+-----------+----------------------+--------------+---------------------------+
-|AXI_UART_Lite_v1_0 | uut/rx_fifo_buf/Memory_reg | Implied   | 16 x 8               | RAM32M x 2   | AXI_UART_Lite_v1_0/ram__2 | 
-|AXI_UART_Lite_v1_0 | uut/tx_fifo_buf/Memory_reg | Implied   | 16 x 8               | RAM32M x 2   | AXI_UART_Lite_v1_0/ram__3 | 
-+-------------------+----------------------------+-----------+----------------------+--------------+---------------------------+
++-------------------+-----------------------------+-----------+----------------------+--------------+---------------------------+
+|Module Name        | RTL Object                  | Inference | Size (Depth x Width) | Primitives   | Hierarchical Name         | 
++-------------------+-----------------------------+-----------+----------------------+--------------+---------------------------+
+|AXI_UART_Lite_v1_0 | uart/rx_fifo_buf/Memory_reg | Implied   | 16 x 8               | RAM32M x 2   | AXI_UART_Lite_v1_0/ram__2 | 
+|AXI_UART_Lite_v1_0 | uart/tx_fifo_buf/Memory_reg | Implied   | 16 x 8               | RAM32M x 2   | AXI_UART_Lite_v1_0/ram__3 | 
++-------------------+-----------------------------+-----------+----------------------+--------------+---------------------------+
 
 Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 No constraint files found.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uut/stat_reg_comp/data_out_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/stat_reg_comp/data_out_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg2_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg0_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg2_reg[9] )
@@ -333,7 +333,7 @@ WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi_bresp_reg[0] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi_araddr_reg[1] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi_araddr_reg[0] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
-WARNING: [Synth 8-3332] Sequential element (\uut/stat_reg_comp/data_out_reg[6] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
+WARNING: [Synth 8-3332] Sequential element (\uart/stat_reg_comp/data_out_reg[6] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg2_reg[31] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg2_reg[30] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg2_reg[29] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
@@ -385,29 +385,29 @@ WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/slv_reg0_reg[8] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi_rresp_reg[1] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 WARNING: [Synth 8-3332] Sequential element (\AXI_UART_Lite_v1_0_S00_AXI_inst/axi_rresp_reg[0] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
-WARNING: [Synth 8-3332] Sequential element (\uut/ctrl_reg_comp/data_out_reg[7] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
-WARNING: [Synth 8-3332] Sequential element (\uut/ctrl_reg_comp/data_out_reg[6] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
-WARNING: [Synth 8-3332] Sequential element (\uut/ctrl_reg_comp/data_out_reg[5] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
+WARNING: [Synth 8-3332] Sequential element (\uart/ctrl_reg_comp/data_out_reg[7] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
+WARNING: [Synth 8-3332] Sequential element (\uart/ctrl_reg_comp/data_out_reg[6] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
+WARNING: [Synth 8-3332] Sequential element (\uart/ctrl_reg_comp/data_out_reg[5] ) is unused and will be removed from module AXI_UART_Lite_v1_0.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 478.512 ; gain = 260.664
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 478.984 ; gain = 261.934
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 478.512 ; gain = 260.664
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 478.984 ; gain = 261.934
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 478.512 ; gain = 260.664
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 478.984 ; gain = 261.934
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 478.512 ; gain = 260.664
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 478.984 ; gain = 261.934
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -419,7 +419,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -437,7 +437,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -450,7 +450,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -462,13 +462,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Start Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -507,7 +507,7 @@ Report Instance Areas:
 +------+----------------------------------+---------------------------+------+
 |1     |top                               |                           |   767|
 |2     |  AXI_UART_Lite_v1_0_S00_AXI_inst |AXI_UART_Lite_v1_0_S00_AXI |   173|
-|3     |  uut                             |top_level                  |   501|
+|3     |  uart                            |top_level                  |   501|
 |4     |    baud_generator                |Boud_rate_gen              |    25|
 |5     |    ctrl_reg_comp                 |simp_reg                   |     6|
 |6     |    edge_detect_rx                |rising_edge_detect         |     2|
@@ -520,11 +520,11 @@ Report Instance Areas:
 |13    |    tx_fifo_buf                   |STD_FIFO_2                 |    65|
 +------+----------------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 73 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 480.285 ; gain = 253.074
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 480.285 ; gain = 262.438
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 479.832 ; gain = 253.418
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 479.832 ; gain = 262.781
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 86 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -538,6 +538,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 95 Infos, 73 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 538.953 ; gain = 311.742
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 538.953 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 05 12:27:58 2015...
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 538.332 ; gain = 311.918
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 538.332 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 07 15:50:17 2015...

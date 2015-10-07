@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Mon Oct 05 12:27:58 2015
+| Date         : Wed Oct 07 15:50:17 2015
 | Host         : voja-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file AXI_UART_Lite_v1_0_utilization_synth.rpt -pb AXI_UART_Lite_v1_0_utilization_synth.pb
 | Design       : AXI_UART_Lite_v1_0
